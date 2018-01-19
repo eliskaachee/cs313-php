@@ -1,0 +1,42 @@
+.page-wrapper {
+  background-color: #00cc99;
+  margin-left: 20%;
+}
+
+h1 {
+  background-color: #006600;
+  color: #FFFFFF;
+  padding: 15px;
+}
+
+.header-wrapper {
+  padding-top: 40px;
+  margin-left: -80px;
+}
+
+.body-wrapper {
+  padding-bottom: 60px;
+  margin-top: 60px;
+}
+
+@media only screen and (max-width: 767px) {
+  .page-wrapper {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .section-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header-wrapper {
+      text-align: center;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .page-wrapper {
+    margin: 0%;
+  }
+}
