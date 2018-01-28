@@ -10,7 +10,6 @@
     $book_to_add = htmlspecialchars($_GET['new_book']);
 
     if(!isset($_SESSION['total_books'])) {
-      echo "starting out";
       $_SESSION['total_books'] = array(); //if there is a new book, but the session variable is not set yet
     }
     if(isset($_GET['new_book'])) {
