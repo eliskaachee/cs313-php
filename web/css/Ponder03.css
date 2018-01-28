@@ -1,6 +1,7 @@
 .div-wrapper {
-  margin: 40px;
+  padding: 40px;
   background-image: url('../img/Ponder03/book_background.jpg');
+  color: white;
 }
 
 h1 {
