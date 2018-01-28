@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Browse Books</title>
-    <link rel="stylesheet" href="css/Ponder03.css">
+    <link rel="stylesheet" href="../css/Ponder03.css">
 	</head>
 	<body>
     <?php

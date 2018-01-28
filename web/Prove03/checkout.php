@@ -8,7 +8,7 @@ $total_price = 10 * sizeof($_SESSION['total_books']);
 <html>
 	<head>
 		<title>Checkout</title>
-    <link rel="stylesheet" href="css/Ponder03.css">
+    <link rel="stylesheet" href="../css/Ponder03.css">
 	</head>
 	<body>
     <div class=div-wrapper>

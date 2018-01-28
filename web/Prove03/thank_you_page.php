@@ -7,7 +7,7 @@ $name = $_SESSION['firstname'];
 <html>
 	<head>
 		<title>Confirmation</title>
-    <link rel="stylesheet" href="css/Ponder03.css">
+    <link rel="stylesheet" href="../css/Ponder03.css">
 	</head>
 	<body>
     <div class=div-wrapper>

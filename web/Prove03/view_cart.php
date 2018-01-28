@@ -11,7 +11,7 @@ if(isset($_GET['remove'])) {
 <html>
 	<head>
 		<title>Cart</title>
-    <link rel="stylesheet" href="css/Ponder03.css">
+    <link rel="stylesheet" href="../css/Ponder03.css">
 	</head>
 	<body>
     <div class=div-wrapper>
@@ -19,7 +19,7 @@ if(isset($_GET['remove'])) {
     <ul>
       <?php foreach ($books_to_buy as $i => $book) {
         if($i != $book_to_remove || is_null($book_to_remove)) {
-        echo "<li><a href=\"view_cart.php?remove=$i\">$i: Remove from List</a>$book</li>";
+        echo "<li><a href=\"view_cart.php?remove=$i\">Remove from List</a>$book</li>";
         }
       }
       echo "<br />";
