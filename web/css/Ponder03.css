@@ -11,3 +11,8 @@ h1 {
 h2 {
   text-align: center;
 }
+
+a {
+  text-decoration: none;
+  margin-right: 10px;
+}
