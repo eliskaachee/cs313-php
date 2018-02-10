@@ -3,7 +3,7 @@ try
 {
   $user = 'postgres';
   $password = 'Crochet11';
-  $db = new PDO('pgsql:host=127.0.0.1;dbname=postgres', $user, $password);
+  $db = new PDO('pgsql:host=localhost;port=5432;dbname=postgres', $user, $password);
     $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 }
 catch (PDOException $ex)
