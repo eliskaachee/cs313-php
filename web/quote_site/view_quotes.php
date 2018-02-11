@@ -10,10 +10,20 @@
     <?php
       try
       {
-        $user = 'postgres';
-        $password = 'Crochet11';
-        $db = new PDO('pgsql:host=localhost;port=5432;dbname=postgres', $user, $password);
-        $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+        // $user = 'postgres';
+        // $password = 'Crochet11';
+        // $db = new PDO('pgsql:host=localhost;port=5432;dbname=postgres', $user, $password);
+        // $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+        $dbUrl = getenv('DATABASE_URL');
+
+        $dbopts = parse_url($dbUrl);
+
+        $dbHost = $dbopts["host"];
+        $dbPort = $dbopts["port"];
+        $dbUser = $dbopts["user"];
+        $dbPassword = $dbopts["pass"];
+        $dbName = ltrim($dbopts["path"],'/');
+        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
       }
       catch (PDOException $ex)
       {

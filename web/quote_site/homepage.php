@@ -7,7 +7,7 @@
 	<body>
     <div class="page-wrapper homepage">
 		    <h1 class="box">Quotes</h1>
-        <a href="/cs313-php/web/quote_site/view_quotes.php">View Quotes</a>
+        <a href="/quote_site/view_quotes.php">View Quotes</a>
       </div>
 	</body>
 </html>
