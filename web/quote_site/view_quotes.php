@@ -32,7 +32,9 @@
       }
       if(isset($_POST["search_category"]) && $_POST["search_category"] != 'None') {
         echo '<h1>Quotes about ' . $_POST["search_category"] . '</h1>';
-        $quote_table = $db->query('SELECT * FROM quote AS q JOIN author AS a ON q.author_id = a.author_id JOIN person p ON q.person_id = p.person_id JOIN quote_to_category qc ON q.quote_id = qc.quote_id JOIN category c ON qc.category_id = c.category_id WHERE category_name = \'' . $_POST["search_category"] . '\'');
+        $quote_table = $db->prepare('SELECT * FROM quote AS q JOIN author AS a ON q.author_id = a.author_id JOIN person p ON q.person_id = p.person_id JOIN quote_to_category qc ON q.quote_id = qc.quote_id JOIN category c ON qc.category_id = c.category_id WHERE category_name =:category_name');
+        $quote_table->bindValue(':category_name', $_POST["search_category"], PDO::PARAM_STR);
+        $quote_table->execute();
       } else {
         echo '<h1>Quotes</h1>';
         $quote_table = $db->query('SELECT * FROM quote AS q JOIN author AS a ON q.author_id = a.author_id JOIN person p ON q.person_id = p.person_id JOIN quote_to_category qc ON q.quote_id = qc.quote_id JOIN category c ON qc.category_id = c.category_id');
