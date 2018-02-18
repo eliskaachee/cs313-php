@@ -1,35 +1,18 @@
+<?php
+require("dbConnect.php");
+$db = get_db();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>View Quotes</title>
-		<link rel="stylesheet" href="/css/quote_site.css">
+		<link rel="stylesheet" href="/cs313-php/web/css/quote_site.css">
 	</head>
 	<body>
     <div class="page-wrapper">
       <div class="quote-column">
     <?php
-      try
-      {
-        // $user = 'postgres';
-        // $password = 'Crochet11';
-        // $db = new PDO('pgsql:host=localhost;port=5432;dbname=postgres', $user, $password);
-        // $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-        $dbUrl = getenv('DATABASE_URL');
-
-        $dbopts = parse_url($dbUrl);
-
-        $dbHost = $dbopts["host"];
-        $dbPort = $dbopts["port"];
-        $dbUser = $dbopts["user"];
-        $dbPassword = $dbopts["pass"];
-        $dbName = ltrim($dbopts["path"],'/');
-        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-      }
-      catch (PDOException $ex)
-      {
-        echo 'Error!: ' . $ex->getMessage();
-        die();
-      }
       if(isset($_POST["search_category"]) && $_POST["search_category"] != 'None') {
         echo '<h1>Quotes about ' . $_POST["search_category"] . '</h1>';
         $quote_table = $db->prepare('SELECT * FROM quote AS q JOIN author AS a ON q.author_id = a.author_id JOIN person p ON q.person_id = p.person_id JOIN quote_to_category qc ON q.quote_id = qc.quote_id JOIN category c ON qc.category_id = c.category_id WHERE category_name =:category_name');
@@ -60,28 +43,28 @@
     <form action="#" method="post">
     <select name="search_category">
       <?php
-      try
-      {
-        // $user = 'postgres';
-        // $password = 'Crochet11';
-        // $db = new PDO('pgsql:host=localhost;port=5432;dbname=postgres', $user, $password);
-        // $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-        $dbUrl = getenv('DATABASE_URL');
-
-        $dbopts = parse_url($dbUrl);
-
-        $dbHost = $dbopts["host"];
-        $dbPort = $dbopts["port"];
-        $dbUser = $dbopts["user"];
-        $dbPassword = $dbopts["pass"];
-        $dbName = ltrim($dbopts["path"],'/');
-        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-      }
-      catch (PDOException $ex)
-      {
-        echo 'Error!: ' . $ex->getMessage();
-        die();
-      }
+      // try
+      // {
+      //   // $user = 'postgres';
+      //   // $password = 'Crochet11';
+      //   // $db = new PDO('pgsql:host=localhost;port=5432;dbname=postgres', $user, $password);
+      //   // $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+      //   $dbUrl = getenv('DATABASE_URL');
+      //
+      //   $dbopts = parse_url($dbUrl);
+      //
+      //   $dbHost = $dbopts["host"];
+      //   $dbPort = $dbopts["port"];
+      //   $dbUser = $dbopts["user"];
+      //   $dbPassword = $dbopts["pass"];
+      //   $dbName = ltrim($dbopts["path"],'/');
+      //   $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+      // }
+      // catch (PDOException $ex)
+      // {
+      //   echo 'Error!: ' . $ex->getMessage();
+      //   die();
+      // }
 
       $category_list = $db->query('SELECT * FROM category');
       echo '<option value="None">None</option>';
