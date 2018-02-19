@@ -7,8 +7,8 @@ $db = get_db();
 <html>
 	<head>
 		<title>View Quotes</title>
-		<!-- <link rel="stylesheet" href="/css/quote_site.css"> -->
-		<link rel="stylesheet" href="/cs313-php/web/css/quote_site.css">
+		<link rel="stylesheet" href="/css/quote_site.css">
+		<!-- <link rel="stylesheet" href="/cs313-php/web/css/quote_site.css"> -->
 	</head>
 	<body>
     <div class="page-wrapper">
