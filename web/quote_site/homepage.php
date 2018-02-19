@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<title>Quotes</title>
-    <!-- <link rel="stylesheet" href="/css/quote_site.css"> -->
-		<link rel="stylesheet" href="/cs313-php/web/css/quote_site.css">
+    <link rel="stylesheet" href="/css/quote_site.css">
+		<!-- <link rel="stylesheet" href="/cs313-php/web/css/quote_site.css"> -->
 	</head>
 	<body>
     <div class="page-wrapper homepage">
