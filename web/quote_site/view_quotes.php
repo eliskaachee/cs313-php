@@ -27,7 +27,10 @@ $db = get_db();
       {
         // echo $_POST["search_category"];
         echo '<div class="quote box">';
-          echo '<div class="votes">Votes:' . $row['vote_count'] . "</div>";
+					// echo '<form action="add_vote.php" method="post">';
+          // echo '<div class="votes">Votes:' . $row['vote_count'] . "</div>";
+					// echo '<input type="submit" name="vote" value="Vote">';
+					// echo '</form>';
           echo '<div class="quote_text">';
             echo '<p>"' . $row['quote_text'] . '" --' . $row['author_name'] . '</p>';
             echo '<div class="quote_info">';
